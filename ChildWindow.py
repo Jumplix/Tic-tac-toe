@@ -24,7 +24,7 @@ class ChildWindows:
         self.labelLogin.pack()
         self.textLogin = Entry(self.root, width=30)
         self.textLogin.pack()
-        self.labelPassword = Label(self.root, text='Пороль')
+        self.labelPassword = Label(self.root, text='Пароль')
         self.labelPassword.pack()
         self.textPassword = Entry(self.root, width=30, show="*")
         self.textPassword.pack()
