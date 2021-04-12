@@ -22,6 +22,7 @@ class Window:
     """
     def run(self):
         self.draw_widgets()
+        #self.create_frame()
         self.root.mainloop()
 
     """
@@ -30,3 +31,7 @@ class Window:
     def draw_widgets(self):
         Button(self.root, width=30, height=5, text="Играть").pack()
         Button(self.root, width=30, height=5, text="Рейтинг").pack()
+
+    def create_frame(self):
+        frame = Frame(self.root, bg = 'blue')
+        frame.place(relx=0.15, rely=0.15, relwidth=0.7, relheight=0.7)
