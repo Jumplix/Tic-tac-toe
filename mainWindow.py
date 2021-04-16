@@ -34,5 +34,8 @@ class Window:
         btn1.pack()
         btn2.pack()
 
+    """
+            Метод вызова дочерного окна для входа
+    """
     def create_child_login(self):
         ChildWindows(self.root, 300, 200, "Войти")

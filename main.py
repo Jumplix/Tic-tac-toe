@@ -8,7 +8,3 @@ window = Window()
 log.info("Создано основное окно программы")
 window.run()
 log.info("Запущено основное окно программы")
-
-
-
-print("puki puki")
