@@ -18,9 +18,6 @@ class ChildWindows:
         self.root.geometry(f"{width}x{height}+600+300")
         self.root.resizable(False, False)
 
-        """
-            TODO:Сделать класс, который будет получать инофрмацию об активных пользователях
-        """
         if plnumb == 1:
             self.firstUser = True
             self.secondUser = False
@@ -39,7 +36,7 @@ class ChildWindows:
         self.grab_focus()
 
     """
-        Метод определяющий фокус дочернего окна
+            Метод определяющий фокус дочернего окна
     """
     def grab_focus(self):
         self.root.grab_set()
@@ -63,6 +60,10 @@ class ChildWindows:
         self.signIn.pack()
         self.signUp.pack()
 
+    """
+            Метод для проверки входа пользователей в бд
+    """
+
     def checkLog(self):
         db = db_scripts.datebase()
         bcheck = db.checkUser(self.textLogin.get(), self.textPassword.get())
@@ -78,16 +79,28 @@ class ChildWindows:
             self.root.destroy()
         db.printRegister()
 
+    """
+            Метод для регистрации пользователей в бд
+    """
+
     def checkReg(self):
         db = db_scripts.datebase()
         db.addUser(self.textLogin.get(), self.textPassword.get())
         db.printRegister()
+
+    """
+            Метод для проверки вошел ли пользователь
+    """
 
     def getUser(self, posi):
         if posi == 1:
             return self.firstUser
         elif posi == 2:
             return self.secondUser
+
+    """
+            Метод для получения имени пользователя из окна
+    """
 
     def getUserName(self, posi):
         if posi == 1:
