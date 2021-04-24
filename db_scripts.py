@@ -1,6 +1,5 @@
 import sqlite3
 
-
 class datebase:
 
     def __init__(self):
@@ -41,8 +40,10 @@ class datebase:
             self.conn.commit()
             self.cur.execute("INSERT INTO rating (login, count_win, count_lose) VALUES (?,?,?)", (login, 0, 0))
             self.conn.commit()
+            return 1
         if res is not None:
-            print("Данный пользователь уже существует") # вывод окна с сообщением "Такой пользователь уже существует"
+            return 0
+            #print("Данный пользователь уже существует")  вывод окна с сообщением "Такой пользователь уже существует"
 
     """
             Метод для обновления пароля пользователя в бд
@@ -108,12 +109,20 @@ class datebase:
         print(date.cur.fetchall())
 
 
-# if __name__ == '__main__':
-#     date = datebase()
-#     date.cur.execute(f"UPDATE rating SET count_win = {0}")
-#     date.conn.commit()
-#     date.cur.execute(f"UPDATE rating SET count_lose = {0}")
-#     date.conn.commit()
-#     # date.cur.execute("INSERT INTO rating VALUES (5, 'Second player',0,0 )")
-#     # date.conn.commit()
-#     print(date.cur.fetchall())
+if __name__ == '__main__':
+    # date = datebase()
+    # date.cur.execute("DELETE FROM register WHERE login = 'fdsfds'")
+    # date.conn.commit()
+    # date.printRegister()
+    #
+    # date.cur.execute("DELETE FROM rating WHERE login = 'fdsfds'")
+    # date.conn.commit()
+    # date.printRecords()
+
+    # date.cur.execute(f"UPDATE rating SET count_win = {0}")
+    # date.conn.commit()
+    # date.cur.execute(f"UPDATE rating SET count_lose = {0}")
+    # date.conn.commit()
+    # date.cur.execute("INSERT INTO rating VALUES (5, 'Second player',0,0 )")
+    # date.conn.commit()
+    print(date.cur.fetchall())
