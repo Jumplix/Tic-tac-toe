@@ -3,9 +3,10 @@ from tkinter import *
 import db_scripts
 import random
 
+from EndGameWindow import EndGameWindow
+
 """
-        Для создания дочернего окна используется класс ChildWindows
-        Вызов окна осуществляется по кнопке в основном окне
+        DO: window with text about win o lose anf pause betwen different game and pause between bot and player step
 """
 
 class GameWindow:
@@ -156,6 +157,7 @@ class GameWindow:
                 self.setWinner(winner)
                 self.endGame()
             if self.draw:
+                self.final = EndGameWindow(self.root, 200, 150, "Итог", 3, self.firUserName, self.secUserName)
                 self.endGame()
 
     """
@@ -178,12 +180,14 @@ class GameWindow:
             self.sLoseScore = self.sLoseScore + 1
             if self.secUserName != "Bot":
                 self.setRecords(self.secUserName, 0)
+            self.final = EndGameWindow(self.root, 200, 150, "Итог", 1, self.firUserName, self.secUserName)
         if whom == "O":
             self.sWinScore = self.sWinScore + 1
             if self.secUserName != "Bot":
                 self.setRecords(self.secUserName, 1)
             self.fLoseScore = self.fLoseScore + 1
             self.setRecords(self.firUserName, 0)
+            self.final = EndGameWindow(self.root, 200, 150, "Итог", 2, self.firUserName, self.secUserName)
         self.draw_widgets_child()
 
     """

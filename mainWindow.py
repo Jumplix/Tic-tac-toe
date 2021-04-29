@@ -4,6 +4,7 @@ from tkinter import *
 import db_scripts
 from ChildWindow import ChildWindows
 from GameWindow import GameWindow
+from EndGameWindow import EndGameWindow
 
 """
     Для создания основного окна используется класс Window
