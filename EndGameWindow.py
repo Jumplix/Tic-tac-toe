@@ -11,7 +11,7 @@ from PIL import ImageTk, Image
 
 class EndGameWindow:
     """
-            Конструктор класса ChildWindows
+            Конструктор класса EndGameWindows
     """
     def __init__(self, parent, width, height, title="Итог", plnumb=0, firUserName="First user", secUserName="Second user"):
         self.root = Toplevel(parent)
