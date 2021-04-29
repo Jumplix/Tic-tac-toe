@@ -160,9 +160,11 @@ class GameWindow:
                 self.final = EndGameWindow(self.root, 200, 150, "Итог", 3, self.firUserName, self.secUserName)
                 self.endGame()
 
+
     """
             Метод отчищения поля
     """
+
 
     def clearBoard(self):
         for i in range(0,9):
